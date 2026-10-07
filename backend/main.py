@@ -41,7 +41,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3000"
+        "http://localhost:3000",
+        "https://duolingo-clone-phi-nine.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -454,6 +455,7 @@ def complete_lesson(
                 progress=100,
 
                 crowns=crowns_earned,
+
             )
 
             db.add(
@@ -511,6 +513,7 @@ def complete_lesson(
             "streak": user.streak,
 
             "gems": user.gems,
+
         },
 
         "lesson": {
@@ -530,7 +533,9 @@ def complete_lesson(
 
             "crowns_earned":
                 crowns_earned,
+
         },
+
     }
 
 
@@ -581,11 +586,13 @@ def get_practice(
             "hearts": user.hearts,
 
             "gems": user.gems,
+
         },
 
         "exercises": [
 
             {
+
                 "id": exercise.id,
 
                 "type": exercise.type,
@@ -596,14 +603,21 @@ def get_practice(
                     exercise.correct_answer,
 
                 "options": (
+
                     exercise.options.split("|")
+
                     if exercise.options
+
                     else []
+
                 ),
+
             }
 
             for exercise in exercises
+
         ]
+
     }
 
 
@@ -686,6 +700,7 @@ def complete_practice(
         total_questions=total_questions,
 
         hearts_remaining=user.hearts,
+
     )
 
     db.add(
@@ -728,6 +743,7 @@ def complete_practice(
             "streak": user.streak,
 
             "gems": user.gems,
+
         },
 
         "practice": {
@@ -752,7 +768,9 @@ def complete_practice(
 
             "completed_at":
                 practice_attempt.completed_at,
+
         },
+
     }
 
 
@@ -818,7 +836,9 @@ def get_latest_practice(
 
             "completed_at":
                 attempt.completed_at,
+
         }
+
     }
 
 
@@ -859,6 +879,7 @@ def get_leaderboard(
 
             "streak":
                 user.streak,
+
         })
 
 
