@@ -54,7 +54,7 @@ export default function PracticePage() {
     async function loadPractice() {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/practice"
+          "http://duolingo-clone-jqmu.onrender.com/api/practice"
         );
 
         if (!response.ok) {
@@ -397,7 +397,7 @@ export default function PracticePage() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/practice/complete",
+        "http://duolingo-clone-jqmu.onrender.com/api/practice/complete",
         {
           method: "POST",
 

@@ -97,7 +97,7 @@ export default function ProfilePage() {
     // Load profile data
     // --------------------------------------------------------
 
-    fetch("http://localhost:8000/api/home")
+    fetch("http://duolingo-clone-jqmu.onrender.com/api/home")
 
       .then((res) => res.json())
 
@@ -131,7 +131,7 @@ export default function ProfilePage() {
     // --------------------------------------------------------
 
     fetch(
-      "http://localhost:8000/api/practice/latest"
+      "http://duolingo-clone-jqmu.onrender.com/api/practice/latest"
     )
 
       .then((res) => res.json())
