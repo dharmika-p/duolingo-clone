@@ -52,7 +52,7 @@ function LessonContent() {
 
   useEffect(() => {
     fetch(
-      `http://duolingo-clone-jqmu.onrender.com/api/lesson/${lessonId}`
+      `https://duolingo-clone-jqmu.onrender.com/api/lesson/${lessonId}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -215,7 +215,7 @@ function LessonContent() {
 
     try {
       const response = await fetch(
-        `http://duolingo-clone-jqmu.onrender.com/api/lesson/${lessonId}/complete`,
+        `https://duolingo-clone-jqmu.onrender.com/api/lesson/${lessonId}/complete`,
         {
           method: "POST",
 

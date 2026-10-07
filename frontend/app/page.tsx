@@ -45,7 +45,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://duolingo-clone-jqmu.onrender.com/api/home")
+    fetch("https://duolingo-clone-jqmu.onrender.com/api/home")
       .then((res) => res.json())
       .then((result) => {
         console.log("HOME DATA:", result);

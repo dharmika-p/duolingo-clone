@@ -19,7 +19,8 @@ export default function LeaderboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/leaderboard")
+    fetch("https://duolingo-clone-jqmu.onrender.com
+    // /api/leaderboard")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch leaderboard");
